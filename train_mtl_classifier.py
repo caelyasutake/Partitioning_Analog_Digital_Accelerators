@@ -62,8 +62,10 @@ def main():
         if type(val) is tuple:
             if val[0] > val[1]:
                 toggle_config[val[1]] = False
+                order.append(val[0])
             else:
                 toggle_config[val[0]] = False
+                order.append(val[1])
             else:
             toggle_config[val] = False
         else:
