@@ -69,7 +69,7 @@ def main():
             else:
             toggle_config[val] = False
         else:
-        toggle_config = None
+            toggle_config = None
 
         # Dynamically toggle during testing
         test_loss, acc1, acc2 = test_model_dynamic(model, test_loader, criterion, epoch, device='cuda', toggle_config)
