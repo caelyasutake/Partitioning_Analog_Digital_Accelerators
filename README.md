@@ -27,7 +27,7 @@ git clone https://github.com/caelyasutake/Partitioning_Analog_Digital_Accelerato
 Currently all experiments are done in the Python notebook. This includes all necessary library installations including instructions for downloading AIHWKit. For further setup on this, please follow the [AIHWKit Installation Guide](https://aihwkit.readthedocs.io/en/latest/install.html) for further reference on this process on analog hardware simulation.
 
 ## Future Work
-We would like to continue further refine the policy function through the use of more complex balancing systems, hoping to enable better performance over long-term simulations. We also plan on extending the framework to be used to handle dynamic workloads and processes, such as real-time streaming of data. Finally, we would like to benchmark more extensively on more complex datasets to fully utilize the capabilities of analog computing hardware configurations.
+We would like to continue to refine the policy function further through the use of more complex balancing systems, hoping to enable better performance over long-term simulations. We also plan on extending the framework to be used to handle dynamic workloads and processes, such as real-time streaming of data. Finally, we would like to benchmark more extensively on more complex datasets to fully utilize the capabilities of analog computing hardware configurations.
 
 ## Contributors
 * Cael Yasutake (Columbia University) - cty2113@columbia.edu
