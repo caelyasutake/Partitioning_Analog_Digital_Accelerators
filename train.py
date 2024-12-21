@@ -53,15 +53,15 @@ def train_model_dynamic(model, trainloader, optim, criterion, epoch, device, rpu
         loss2 = criterion(op2, tg2)
         total_loss = loss1 + loss2
 
-        hardware_loss = compute_hardware_loss(model, op1) + compute_hardware_loss(model, op2)
-        total_loss += hardware_loss
-
         # Backpropagation
         total_loss.backward()
 
         # Update weights
         optim.step()
 
+        hardware_loss = compute_hardware_loss(model, op1) + compute_hardware_loss(model, op2)
+        total_loss += hardware_loss
+        
         # Accumulate metrics
         train_loss += total_loss.item()
         _, pd1 = torch.max(op1.data, 1)
