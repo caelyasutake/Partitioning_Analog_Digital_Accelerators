@@ -32,3 +32,5 @@ We would like to continue further refine the policy function through the use of 
 ## Contributors
 * Cael Yasutake (Columbia University) - cty2113@columbia.edu
 * Seojin Yoon (Columbia University) - sy3028@columbia.edu
+
+Note: The Python Notebook is a shared notebook where both members contributed to code and design.
