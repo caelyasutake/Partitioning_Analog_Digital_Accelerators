@@ -46,15 +46,15 @@ def create_rpu_config(g_max=25, tile_size=512, modifier_std=0.07):
     rpu_config.drift_compensation = GlobalDriftCompensation()
     return rpu_config
 
-def compute_hardware_metrics(model, outputs):
-    rpu_config = model.rpu_config
-    temperature = np.random.uniform(0.8, 1.2) * rpu_config.forward.inp_res * rpu_config.forward.out_res
-    noise = np.random.normal(0, rpu_config.forward.out_noise)
-    drift = rpu_config.drift_compensation.readout(outputs)
+def compute_hardware_metrics(rpu_config, outputs):
+    temperature = float(np.random.uniform(0.8, 1.2) * rpu_config.forward.inp_res * rpu_config.forward.out_res)
+    noise = float(np.random.uniform(0.8, 1.2) * rpu_config.forward.out_noise)
+    drift = float(rpu_config.drift_compensation.readout(outputs))
     return temperature, noise, drift
 
-def compute_hardware_loss(model, outputs):
-    temperature, noise, drift = compute_hardware_metrics(model, outputs)
+def compute_hardware_loss(rpu_config, outputs):
+    temperature, noise, drift = compute_hardware_metrics(rpu_config, outputs)
+    temperature = torch.tensor(temperature, device=outputs.device)
     hardware_loss = 0.2 * temperature + 0.3 * noise + 0.2 * drift
     return hardware_loss
 
