@@ -87,8 +87,8 @@ class MTL_Net_DynamicToggle(nn.Module):
         self.dropout2 = nn.Dropout(0.3)
 
         # Task-specific layers remain digital
-        self.fc3 = nn.Linear(128, self.classes[0])
-        self.fc4 = nn.Linear(128, self.classes[1])
+        self.fc3 = DynamicLayer('linear', 128, self.classes[0])
+        self.fc4 = DynamicLayer('linear', 128, self.classes[1])
 
     def forward(self, x):
         x = F.max_pool2d(F.relu(self.conv1(x)), kernel_size=3)
