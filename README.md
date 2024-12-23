@@ -15,6 +15,8 @@ We implement a policy function to determine distribution of layers dynamically b
 ### Datasets
 Our partitioning algorithm is currently implemented on the CIFAR10 dataset for two-class classification. We are currently working on benchmarking against further, more in-depth datasets such as COCO or BelgiumTS.
 
+The MTL_COCO.ipynb notebook is an implementation of MTL on the COCO dataset, however, AIHWKit has yet to be implemented due to the extensive training time required for MTL COCO.
+
 ### Hardware
 All computations were done utilizing Google Colab Notebooks on T4 GPUs and CPUs. The analog simulations leverage PCM-based AIMC cores.
 
@@ -33,4 +35,4 @@ We would like to continue to refine the policy function further through the use 
 * Cael Yasutake (Columbia University) - cty2113@columbia.edu
 * Seojin Yoon (Columbia University) - sy3028@columbia.edu
 
-Note: The Python Notebook is a shared notebook where both members contributed to code and design.
+Note: The Python Notebooks are shared notebooks where both members contributed to code and design.
